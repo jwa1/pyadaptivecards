@@ -166,6 +166,11 @@ Inputs
 Actions
 -------
 
+.. autoclass:: pyadaptivecards.actions.ActionSet()
+   :members:
+
+   .. automethod:: __init__
+
 .. autoclass:: pyadaptivecards.actions.OpenUrl
    :members:
 
