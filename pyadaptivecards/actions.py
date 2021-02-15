@@ -24,6 +24,38 @@ SOFTWARE.
 
 from .abstract_components import Serializable
 
+
+class ActionSet(Serializable):
+    """Displays a set of actions."""
+
+    def __init__(self, actions=None,
+                       height=None,
+                       separator=None,
+                       spacing=None,
+                       id=None,
+                       ):
+        """Create a new ActionSet.
+
+        Args:
+           actions(list): List of Action elements.
+           selectAction(OpenURL, Submit): Action to be invoked when container is selected.
+           height(BlockElementHeight): Specifies the way the height of this container should
+              be calculated (stretch or auto).
+           separator(bool): Draw a separating line when set to true
+           spacing(Spacing): Specify the spacing of this component
+           id(str): The id of this component
+        """
+        self.type = "ActionSet"
+        self.actions = actions
+        self.height = height
+        self.separator = separator
+        self.spacing = spacing
+        self.id = id
+
+        super().__init__(serializable_properties=["actions"],
+                         simple_properties=["height", "separator", "spacing", "id", "type"])
+
+
 class OpenUrl(Serializable):
     """Open a external url when being invoked. """
     def __init__(self, url, title=None,
